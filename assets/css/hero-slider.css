@@ -1,0 +1,384 @@
+/* ========================================
+   HERO SLIDER - FULLY RESPONSIVE
+   ======================================== */
+
+/* Container */
+.ghain-hero-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Mobile: 60-70vh */
+    height: clamp(400px, 65vh, 600px);
+}
+
+/* Tablet and up: 70-85vh with max height cap */
+@media (min-width: 768px) {
+    .ghain-hero-slider {
+        height: clamp(500px, 75vh, 700px);
+    }
+}
+
+/* Desktop: larger but capped */
+@media (min-width: 1024px) {
+    .ghain-hero-slider {
+        height: clamp(600px, 80vh, 850px);
+    }
+}
+
+/* Swiper Container */
+.ghain-hero-slider .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual Slide */
+.ghain-hero-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background Image */
+.ghain-hero-slide__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+/* Very Light Gradient Overlay for Readability */
+.ghain-hero-slide__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.2) 100%);
+    z-index: 2;
+}
+
+/* Content Container */
+.ghain-hero-slide__content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    /* Make full height */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 3rem);
+    color: #fff;
+    text-align: right;
+    /* RTL alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Push content to bottom */
+    align-items: flex-start;
+    /* Align to start (right in RTL) */
+    padding-bottom: 200px;
+}
+
+/* Mobile: center or left aligned with safe padding */
+@media (max-width: 767px) {
+    .ghain-hero-slide__content {
+        text-align: center;
+        padding: 0 1.5rem 5rem;
+    }
+}
+
+/* Badge/Label */
+.ghain-hero-slide__badge {
+    display: inline-block;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Headline (H1) - Fluid Typography */
+.ghain-hero-slide__title {
+    font-size: clamp(1.75rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Description */
+.ghain-hero-slide__description {
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+    line-height: 1.6;
+    margin-bottom: clamp(1.25rem, 3vw, 2rem);
+    max-width: 600px;
+    opacity: 0.95;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 767px) {
+    .ghain-hero-slide__description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Shop Text above CTA */
+.ghain-hero-shop-text {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: clamp(0.75rem, 1.5vw, 1.5rem);
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA Buttons Container */
+.ghain-hero-slide__cta {
+    display: flex;
+    gap: clamp(0.75rem, 2vw, 1rem);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+    .ghain-hero-slide__cta {
+        justify-content: center;
+    }
+}
+
+/* Primary CTA Button */
+.ghain-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.625rem, 1.5vw, 0.875rem) clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    min-height: 40px;
+    /* Touch target size */
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.ghain-hero-btn--primary {
+    background: var(--tp-theme-primary, #e74c3c);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.ghain-hero-btn--primary:hover {
+    background: var(--tp-theme-primary-hover, #c0392b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.ghain-hero-btn--secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.ghain-hero-btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Navigation Arrows */
+.ghain-hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: clamp(40px, 8vw, 50px);
+    height: clamp(40px, 8vw, 50px);
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--tp-theme-primary, #e74c3c);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.ghain-hero-arrow:hover {
+    background: #fff;
+    color: var(--tp-theme-primary, #e74c3c);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.ghain-hero-arrow--prev {
+    left: clamp(1rem, 3vw, 2rem);
+}
+
+.ghain-hero-arrow--next {
+    right: clamp(1rem, 3vw, 2rem);
+}
+
+/* Hide arrows on very small screens */
+@media (max-width: 480px) {
+    .ghain-hero-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Pagination Dots */
+.ghain-hero-dots {
+    position: absolute;
+    bottom: clamp(1.5rem, 4vw, 2.5rem);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ghain-hero-dots .swiper-pagination-bullet {
+    width: clamp(8px, 2vw, 12px);
+    height: clamp(8px, 2vw, 12px);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.ghain-hero-dots .swiper-pagination-bullet-active {
+    background: #fff;
+    width: clamp(24px, 4vw, 32px);
+    border-radius: 6px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .ghain-hero-slider * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    /* Disable autoplay via JS, but also hide transition effects */
+    .ghain-hero-slide {
+        transition: none !important;
+    }
+}
+
+/* Accessibility: Focus States */
+.ghain-hero-btn:focus,
+.ghain-hero-arrow:focus {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+}
+
+/* Loading State */
+.ghain-hero-slider.loading .ghain-hero-slide__bg {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.ghain-hero-slider.loaded .ghain-hero-slide__bg {
+    opacity: 1;
+}
+
+/* ========================================
+   HERO SIDE FLYING IMAGES
+   ======================================== */
+
+/* Container for side images */
+.ghain-hero-side-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* Individual side image */
+.ghain-hero-side-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(150px, 15vw, 250px);
+    height: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    /* Hidden on mobile by default */
+    display: none;
+}
+
+/* Show on medium screens and up (tablets and desktops) */
+@media (min-width: 768px) {
+    .ghain-hero-side-img {
+        display: block;
+    }
+}
+
+/* Left side image */
+.ghain-hero-side-img--left {
+    left: 0;
+    animation: flyLeft 3s linear infinite;
+}
+
+/* Right side image */
+.ghain-hero-side-img--right {
+    right: 0;
+    animation: flyRight 3s linear infinite;
+}
+
+/* Flying animation for left image */
+@keyframes flyLeft {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 20px)) translateX(0);
+    }
+}
+
+/* Flying animation for right image */
+@keyframes flyRight {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(calc(-50% + 20px)) translateX(0);
+    }
+}
+
+/* Adjust size for larger screens */
+@media (min-width: 1200px) {
+    .ghain-hero-side-img {
+        width: clamp(200px, 18vw, 300px);
+    }
+}

@@ -1,0 +1,456 @@
+/* Custom RTL Overrides & Font Setup */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Cairo', sans-serif !important;
+    text-align: right;
+    direction: rtl;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.tp-slider-title-2,
+.tp-section-title-2,
+.tp-product-title-2,
+.tp-footer-widget-title,
+.tp-main-menu-content ul li a,
+p,
+span,
+a,
+div,
+button,
+input,
+select,
+textarea {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Helpers for margin/padding flipping */
+/* NOTE: Bootstrap RTL should handle ms/me (margin-start/end) but legacy classes like ml-*, mr-* might need manual flipping or overrides if the theme uses them extensively */
+
+.mr-5 {
+    margin-left: 5px !important;
+    margin-right: 0 !important;
+}
+
+.ml-5 {
+    margin-right: 5px !important;
+    margin-left: 0 !important;
+}
+
+.mr-10 {
+    margin-left: 10px !important;
+    margin-right: 0 !important;
+}
+
+.ml-10 {
+    margin-right: 10px !important;
+    margin-left: 0 !important;
+}
+
+.mr-15 {
+    margin-left: 15px !important;
+    margin-right: 0 !important;
+}
+
+.ml-15 {
+    margin-right: 15px !important;
+    margin-left: 0 !important;
+}
+
+.mr-20 {
+    margin-left: 20px !important;
+    margin-right: 0 !important;
+}
+
+.ml-20 {
+    margin-right: 20px !important;
+    margin-left: 0 !important;
+}
+
+.mr-30 {
+    margin-left: 30px !important;
+    margin-right: 0 !important;
+}
+
+.ml-30 {
+    margin-right: 30px !important;
+    margin-left: 0 !important;
+}
+
+.mr-35 {
+    margin-left: 35px !important;
+    margin-right: 0 !important;
+}
+
+.ml-35 {
+    margin-right: 35px !important;
+    margin-left: 0 !important;
+}
+
+.mr-40 {
+    margin-left: 40px !important;
+    margin-right: 0 !important;
+}
+
+.ml-40 {
+    margin-right: 40px !important;
+    margin-left: 0 !important;
+}
+
+.mr-50 {
+    margin-left: 50px !important;
+    margin-right: 0 !important;
+}
+
+.ml-50 {
+    margin-right: 50px !important;
+    margin-left: 0 !important;
+}
+
+
+.pr-10 {
+    padding-left: 10px !important;
+    padding-right: 0 !important;
+}
+
+.pl-10 {
+    padding-right: 10px !important;
+    padding-left: 0 !important;
+}
+
+.pr-20 {
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+}
+
+.pl-20 {
+    padding-right: 20px !important;
+    padding-left: 0 !important;
+}
+
+.pr-30 {
+    padding-left: 30px !important;
+    padding-right: 0 !important;
+}
+
+.pl-30 {
+    padding-right: 30px !important;
+    padding-left: 0 !important;
+}
+
+/* Text Alignment */
+.text-left {
+    text-align: right !important;
+}
+
+.text-right {
+    text-align: left !important;
+}
+
+.text-end {
+    text-align: left !important;
+}
+
+/* Bootstrap 5 end is normally right, in RTL it should be left */
+
+/* Float utilities */
+.float-left {
+    float: right !important;
+}
+
+.float-right {
+    float: left !important;
+}
+
+/* Flip arrow icons */
+.fa-angle-right:before {
+    content: "\f104";
+}
+
+.fa-angle-left:before {
+    content: "\f105";
+}
+
+.fa-arrow-right:before {
+    content: "\f060";
+}
+
+.fa-arrow-left:before {
+    content: "\f061";
+}
+
+.fa-chevron-right:before {
+    content: "\f053";
+}
+
+.fa-chevron-left:before {
+    content: "\f054";
+}
+
+/* Offcanvas and Sidebars */
+.offcanvas__style-darkRed {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+}
+
+.offcanvas-opened .offcanvas__style-darkRed {
+    transform: translateX(0);
+}
+
+.cartmini__style-darkRed {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+}
+
+.cartmini-opened .cartmini__style-darkRed {
+    transform: translateX(0);
+}
+
+/* Header Specifics */
+/* .tp-header-action-btn svg { transform: scaleX(-1); } - Uncomment if icons feel backwards */
+
+
+.tp-header-action-badge {
+    right: auto;
+    left: -5px;
+}
+
+/* Active Wishlist Button Color */
+.tp-product-add-to-wishlist-btn.active,
+.tp-product-details-action-sm-btn.wishlist-btn.active,
+.tp-product-details-action-sm-btn.wishlist-btn.active svg,
+.wishlist-btn.active {
+    color: var(--tp-theme-primary) !important;
+    border-color: var(--tp-theme-primary) !important;
+}
+
+.tp-product-add-to-wishlist-btn.active:hover,
+.tp-product-details-action-sm-btn.wishlist-btn.active:hover {
+    color: var(--tp-theme-primary) !important;
+    background-color: transparent !important;
+}
+
+/* Ensure SVG matches current color */
+.tp-product-details-action-sm-btn.wishlist-btn.active svg path,
+.tp-product-add-to-wishlist-btn.active svg path {
+    fill: var(--tp-theme-primary) !important;
+    stroke: var(--tp-theme-primary) !important;
+}
+
+/* Filled heart icon color */
+.tp-product-add-to-wishlist-btn.active i {
+    color: var(--tp-theme-primary) !important;
+}
+
+/* Product Details Page RTL Fixes */
+/* Fix padding/margin on right side for RTL layout */
+.tp-product-details-wrapper {
+    margin-left: 0 !important;
+    margin-right: 21px !important;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .tp-product-details-wrapper {
+        margin-right: 0 !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px),
+only screen and (min-width: 576px) and (max-width: 767px),
+(max-width: 575px) {
+    .tp-product-details-wrapper {
+        margin-right: 0 !important;
+    }
+}
+
+.tp-product-details-thumb-wrapper {
+    margin-right: 0 !important;
+    margin-left: 20px !important;
+}
+
+.tp-product-details-thumb-wrapper .nav-tabs {
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+}
+
+.tp-product-details-stock {
+    margin-right: 0 !important;
+    margin-left: 12px !important;
+}
+
+.tp-product-details-rating {
+    margin-right: 0 !important;
+    margin-left: 11px !important;
+}
+
+.tp-product-details-quantity .tp-product-quantity {
+    margin-right: 0 !important;
+    margin-left: 15px !important;
+}
+
+/* Increase Main Product Image Size */
+@media (min-width: 576px) {
+    .tp-product-details-nav-main-thumb {
+        height: 600px !important;
+    }
+}
+
+/* Ensure thumbnails stay proportional */
+.tp-product-details-thumb-wrapper .nav-tabs .nav-link {
+    height: 120px !important;
+}
+
+@media (max-width: 575px) {
+    .tp-product-details-thumb-wrapper .nav-tabs .nav-link {
+        height: auto !important;
+    }
+}
+
+/* Enhanced Main Dropdown Menu Styling */
+.main-menu>nav>ul>li>.tp-submenu {
+    border-radius: 8px;
+    box-shadow: 0px 20px 60px 0px rgba(11, 6, 70, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+}
+
+.main-menu>nav>ul>li>.tp-submenu li a {
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main-menu>nav>ul>li>.tp-submenu li a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, transparent, rgba(var(--tp-theme-primary-rgb), 0.05));
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.main-menu>nav>ul>li>.tp-submenu li:hover a {
+    padding-right: 30px;
+}
+
+.main-menu>nav>ul>li>.tp-submenu li:hover a::after {
+    width: 100%;
+}
+
+/* Nested Dropdown Menu Support - Enhanced */
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown {
+    position: relative;
+}
+
+/* Add extra padding for items with nested submenus to make room for arrow */
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown>a {
+    padding-right: 40px;
+}
+
+/* Add arrow indicator for items with nested submenus */
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown>a::before {
+    content: "\f104";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: var(--tp-common-black);
+    opacity: 0.5;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown:hover>a::before {
+    opacity: 1;
+    color: var(--tp-theme-primary);
+}
+
+/* Nested submenu styling */
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown>.tp-submenu {
+    position: absolute;
+    top: -12px;
+    right: 100%;
+    left: auto;
+    min-width: 220px;
+    background: var(--tp-common-white);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0px 20px 60px 0px rgba(11, 6, 70, 0.12);
+    padding: 15px 0;
+    border-radius: 8px;
+    transform-origin: right center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    transform: translateX(10px);
+    margin-right: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Show nested submenu on hover */
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown:hover>.tp-submenu {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+}
+
+/* Nested submenu items styling */
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown>.tp-submenu li {
+    padding: 0 20px;
+}
+
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown>.tp-submenu li a {
+    padding: 10px 15px;
+    display: block;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown>.tp-submenu li a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, transparent, rgba(var(--tp-theme-primary-rgb), 0.05));
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown>.tp-submenu li:hover a {
+    color: var(--tp-theme-primary);
+    padding-right: 20px;
+}
+
+.main-menu>nav>ul>li>.tp-submenu li.has-dropdown>.tp-submenu li:hover a::after {
+    width: 100%;
+}
+
+/* Ensure proper positioning for RTL */
+[dir="rtl"] .main-menu>nav>ul>li>.tp-submenu li.has-dropdown>.tp-submenu {
+    right: 100%;
+    left: auto;
+    transform-origin: right center;
+}

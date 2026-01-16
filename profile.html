@@ -1,0 +1,431 @@
+<!doctype html>
+<html class="no-js" lang="ar" dir="rtl">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>غين - الملف الشخصي</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/bootstrap-rtl.css">
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/slick.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="assets/css/flaticon_shofy.css">
+   <link rel="stylesheet" href="assets/css/spacing.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="stylesheet" href="assets/css/rtl-custom.css">
+   <link rel="stylesheet" href="assets/css/profile-enhancements.css">
+</head>
+
+<body>
+   <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+
+   <!-- pre loader area start -->
+   <div id="global-header"></div>
+
+   <!-- header area end -->
+
+   <main>
+
+      <!-- profile area start -->
+      <section class="profile__area pt-120 pb-120">
+         <div class="container">
+            <div class="profile__inner p-relative">
+               <div class="profile__shape">
+                  <img class="profile__shape-1" src="assets/img/login/laptop.png" alt="">
+                  <img class="profile__shape-2" src="assets/img/login/man.png" alt="">
+                  <img class="profile__shape-3" src="assets/img/login/shape-1.png" alt="">
+                  <img class="profile__shape-4" src="assets/img/login/shape-2.png" alt="">
+                  <img class="profile__shape-5" src="assets/img/login/shape-3.png" alt="">
+                  <img class="profile__shape-6" src="assets/img/login/shape-4.png" alt="">
+               </div>
+               <div class="row">
+                  <div class="col-xxl-4 col-lg-4">
+                     <div class="profile__tab mr-40">
+                        <nav>
+                           <div class="nav nav-tabs tp-tab-menu flex-column" id="profile-tab" role="tablist">
+                              <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab"
+                                 data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                 aria-selected="false"><span><i class="fa-regular fa-user-pen"></i></span>الملف
+                                 الشخصي</button>
+                              <button class="nav-link" id="nav-information-tab" data-bs-toggle="tab"
+                                 data-bs-target="#nav-information" type="button" role="tab"
+                                 aria-controls="nav-information" aria-selected="false"><span><i
+                                       class="fa-regular fa-circle-info"></i></span> المعلومات</button>
+
+                              <button class="nav-link" id="nav-password-tab" data-bs-toggle="tab"
+                                 data-bs-target="#nav-password" type="button" role="tab" aria-controls="nav-password"
+                                 aria-selected="false"><span><i class="fa-regular fa-lock"></i></span> تغيير كلمة
+                                 المرور</button>
+                              <span id="marker-vertical" class="tp-tab-line d-none d-sm-inline-block"></span>
+                           </div>
+                        </nav>
+                     </div>
+                  </div>
+                  <div class="col-xxl-8 col-lg-8">
+                     <div class="profile__tab-content">
+                        <div class="tab-content" id="profile-tabContent">
+                           <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
+                              aria-labelledby="nav-profile-tab">
+                              <div class="profile__main">
+                                 <div class="profile__main-top pb-80">
+                                    <div class="row align-items-center">
+                                       <div class="col-md-6">
+                                          <div class="profile__main-inner d-flex flex-wrap align-items-center">
+                                             <div class="profile__main-thumb">
+                                                <img src="assets/img/users/user-10.jpg" alt="">
+                                                <div class="profile__main-thumb-edit">
+                                                   <input id="profile-thumb-input" class="profile-img-popup"
+                                                      type="file">
+                                                   <label for="profile-thumb-input"><i
+                                                         class="fa-light fa-camera"></i></label>
+                                                </div>
+                                             </div>
+                                             <div class="profile__main-content">
+                                                <!-- Display Mode -->
+                                                <div id="profile-name-display" class="profile__name-display">
+                                                   <h4 class="profile__main-title mb-2">مرحباً <span
+                                                         id="display-name">السيد المسؤول</span>!</h4>
+                                                   <button type="button" class="btn btn-link p-0 text-decoration-none"
+                                                      id="edit-name-btn" onclick="toggleNameEdit()">
+                                                      <i class="fa-light fa-pen-to-square me-1"></i>
+                                                      <small>تعديل الاسم</small>
+                                                   </button>
+                                                </div>
+
+                                                <!-- Edit Mode -->
+                                                <div id="profile-name-edit" class="profile__name-edit"
+                                                   style="display: none;">
+                                                   <form action="#" onsubmit="saveName(event)">
+                                                      <div class="profile__input-box mb-3">
+                                                         <div class="profile__input">
+                                                            <input type="text" id="name-input" placeholder="أدخل اسمك"
+                                                               value="السيد المسؤول">
+                                                            <span>
+                                                               <svg width="17" height="19" viewBox="0 0 17 19"
+                                                                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                  <path
+                                                                     d="M9 9C11.2091 9 13 7.20914 13 5C13 2.79086 11.2091 1 9 1C6.79086 1 5 2.79086 5 5C5 7.20914 6.79086 9 9 9Z"
+                                                                     stroke="currentColor" stroke-width="1.5"
+                                                                     stroke-linecap="round" stroke-linejoin="round" />
+                                                                  <path
+                                                                     d="M15.5 17.6C15.5 14.504 12.3626 12 8.5 12C4.63737 12 1.5 14.504 1.5 17.6"
+                                                                     stroke="currentColor" stroke-width="1.5"
+                                                                     stroke-linecap="round" stroke-linejoin="round" />
+                                                               </svg>
+                                                            </span>
+                                                         </div>
+                                                      </div>
+                                                      <div class="d-flex gap-2">
+                                                         <button type="submit" class="tp-btn tp-btn-sm">
+                                                            <i class="fa-light fa-check me-1"></i>حفظ
+                                                         </button>
+                                                         <button type="button" class="tp-btn-border tp-btn-sm"
+                                                            onclick="cancelNameEdit()">
+                                                            <i class="fa-light fa-xmark me-1"></i>إلغاء
+                                                         </button>
+                                                      </div>
+                                                   </form>
+                                                </div>
+
+                                                <script>
+                                                   function toggleNameEdit() {
+                                                      document.getElementById('profile-name-display').style.display = 'none';
+                                                      document.getElementById('profile-name-edit').style.display = 'block';
+                                                      document.getElementById('name-input').focus();
+                                                   }
+
+                                                   function cancelNameEdit() {
+                                                      document.getElementById('profile-name-edit').style.display = 'none';
+                                                      document.getElementById('profile-name-display').style.display = 'block';
+                                                      // Reset input to current display name
+                                                      document.getElementById('name-input').value = document.getElementById('display-name').textContent;
+                                                   }
+
+                                                   function saveName(event) {
+                                                      event.preventDefault();
+                                                      const newName = document.getElementById('name-input').value.trim();
+                                                      if (newName) {
+                                                         document.getElementById('display-name').textContent = newName;
+                                                         cancelNameEdit();
+                                                         // Here you would typically send the data to your backend
+                                                         console.log('Name updated to:', newName);
+                                                      }
+                                                   }
+                                                </script>
+
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <div class="profile__main-logout text-sm-end">
+                                             <a href="login.html" class="tp-logout-btn">تسجيل الخروج</a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="nav-information" role="tabpanel"
+                              aria-labelledby="nav-information-tab">
+                              <div class="profile__info">
+                                 <h3 class="profile__info-title">التفاصيل الشخصية</h3>
+                                 <div class="profile__info-content">
+                                    <form action="#">
+                                       <div class="row">
+                                          <div class="col-xxl-6 col-md-6">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <input type="text" placeholder="أدخل اسم المستخدم"
+                                                      value="شاهيناز صقيل">
+                                                   <span>
+                                                      <svg width="17" height="19" viewBox="0 0 17 19" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                         <path
+                                                            d="M9 9C11.2091 9 13 7.20914 13 5C13 2.79086 11.2091 1 9 1C6.79086 1 5 2.79086 5 5C5 7.20914 6.79086 9 9 9Z"
+                                                            stroke="currentColor" stroke-width="1.5"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                         <path
+                                                            d="M15.5 17.6C15.5 14.504 12.3626 12 8.5 12C4.63737 12 1.5 14.504 1.5 17.6"
+                                                            stroke="currentColor" stroke-width="1.5"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                      </svg>
+                                                   </span>
+                                                </div>
+                                             </div>
+                                          </div>
+
+                                          <div class="col-xxl-6 col-md-6">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <input type="email" placeholder="أدخل البريد الإلكتروني"
+                                                      value="example@mail.com">
+                                                   <span>
+                                                      <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                         <path
+                                                            d="M13 14.6H5C2.6 14.6 1 13.4 1 10.6V5C1 2.2 2.6 1 5 1H13C15.4 1 17 2.2 17 5V10.6C17 13.4 15.4 14.6 13 14.6Z"
+                                                            stroke="currentColor" stroke-width="1.5"
+                                                            stroke-miterlimit="10" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                         <path
+                                                            d="M13 5.3999L10.496 7.3999C9.672 8.0559 8.32 8.0559 7.496 7.3999L5 5.3999"
+                                                            stroke="currentColor" stroke-width="1.5"
+                                                            stroke-miterlimit="10" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                      </svg>
+                                                   </span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-xxl-6 col-md-6">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <input type="text" placeholder="أدخل رقم الهاتف"
+                                                      value="0123 456 7889">
+                                                   <span>
+                                                      <svg width="15" height="18" viewBox="0 0 15 18" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                         <path
+                                                            d="M13.9148 5V13C13.9148 16.2 13.1076 17 9.87892 17H5.03587C1.80717 17 1 16.2 1 13V5C1 1.8 1.80717 1 5.03587 1H9.87892C13.1076 1 13.9148 1.8 13.9148 5Z"
+                                                            stroke="currentColor" stroke-width="1.5"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                         <path opacity="0.4" d="M9.08026 3.80054H5.85156"
+                                                            stroke="currentColor" stroke-width="1.5"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                         <path opacity="0.4"
+                                                            d="M7.45425 14.6795C8.14522 14.6795 8.70537 14.1243 8.70537 13.4395C8.70537 12.7546 8.14522 12.1995 7.45425 12.1995C6.76327 12.1995 6.20312 12.7546 6.20312 13.4395C6.20312 14.1243 6.76327 14.6795 7.45425 14.6795Z"
+                                                            stroke="currentColor" stroke-width="1.5"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                      </svg>
+                                                   </span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-xxl-6 col-md-6">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <select>
+                                                      <option>ذكر</option>
+                                                      <option>أنثى</option>
+                                                      <option>آخر</option>
+                                                   </select>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-xxl-12">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <input type="text" placeholder="أدخل الشارع"
+                                                      value="3133 Lewis Street">
+                                                   <span>
+                                                      <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                         <path
+                                                            d="M7.99377 10.1461C9.39262 10.1461 10.5266 9.0283 10.5266 7.64946C10.5266 6.27061 9.39262 5.15283 7.99377 5.15283C6.59493 5.15283 5.46094 6.27061 5.46094 7.64946C5.46094 9.0283 6.59493 10.1461 7.99377 10.1461Z"
+                                                            stroke="currentColor" stroke-width="1.5" />
+                                                         <path
+                                                            d="M1.19707 6.1933C2.79633 -0.736432 13.2118 -0.72843 14.803 6.2013C15.7365 10.2663 13.1712 13.7072 10.9225 15.8357C9.29079 17.3881 6.70924 17.3881 5.06939 15.8357C2.8288 13.7072 0.263493 10.2583 1.19707 6.1933Z"
+                                                            stroke="currentColor" stroke-width="1.5" />
+                                                      </svg>
+                                                   </span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-xxl-6 col-md-6">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <input type="text" placeholder="أدخل المدينة" value="Naperville">
+                                                   <span>
+                                                      <i class="fa-light fa-city"></i>
+                                                   </span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-xxl-6 col-md-6">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <input type="text" placeholder="أدخل المنطقة / المحافظة"
+                                                      value="Illinois">
+                                                   <span>
+                                                      <i class="fa-light fa-map"></i>
+                                                   </span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-xxl-6 col-md-6">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <input type="text" placeholder="أدخل الرمز البريدي" value="60563">
+                                                   <span>
+                                                      <i class="fa-light fa-mailbox"></i>
+                                                   </span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-xxl-6 col-md-6">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <input type="text" placeholder="أدخل رمز الاتصال الدولي" value="+1">
+                                                   <span>
+                                                      <i class="fa-light fa-phone"></i>
+                                                   </span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-xxl-12">
+                                             <div class="profile__input-box">
+                                                <div class="profile__input">
+                                                   <input type="text" placeholder="أدخل الدولة" value="United States">
+                                                   <span>
+                                                      <i class="fa-light fa-globe"></i>
+                                                   </span>
+                                                </div>
+                                             </div>
+                                          </div>
+
+                                          <div class="col-xxl-12">
+                                             <div class="profile__btn">
+                                                <button type="submit" class="tp-btn">تحديث الملف الشخصي</button>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </form>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="tab-pane fade" id="nav-password" role="tabpanel"
+                              aria-labelledby="nav-password-tab">
+                              <div class="profile__password">
+                                 <form action="#">
+                                    <div class="row">
+                                       <div class="col-xxl-12">
+                                          <div class="tp-profile-input-box">
+                                             <div class="tp-contact-input">
+                                                <input name="old_pass" id="old_pass" type="password">
+                                             </div>
+                                             <div class="tp-profile-input-title">
+                                                <label for="old_pass">كلمة المرور القديمة</label>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-xxl-6 col-md-6">
+                                          <div class="tp-profile-input-box">
+                                             <div class="tp-profile-input">
+                                                <input name="new_pass" id="new_pass" type="password">
+                                             </div>
+                                             <div class="tp-profile-input-title">
+                                                <label for="new_pass">كلمة المرور الجديدة</label>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-xxl-6 col-md-6">
+                                          <div class="tp-profile-input-box">
+                                             <div class="tp-profile-input">
+                                                <input name="con_new_pass" id="con_new_pass" type="password">
+                                             </div>
+                                             <div class="tp-profile-input-title">
+                                                <label for="con_new_pass">تأكيد كلمة المرور</label>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-xxl-6 col-md-6">
+                                          <div class="profile__btn">
+                                             <button type="submit" class="tp-btn">تحديث</button>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- profile area end -->
+
+   </main>
+
+
+   <!-- footer area start -->
+   <div id="global-footer"></div>
+
+   <!-- footer area end -->
+
+
+
+   <!-- JS here -->
+   <script src="assets/js/vendor/jquery.js"></script>
+   <script src="assets/js/vendor/waypoints.js"></script>
+   <script src="assets/js/bootstrap-bundle.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/swiper-bundle.js"></script>
+   <script src="assets/js/slick.js"></script>
+   <script src="assets/js/range-slider.js"></script>
+   <script src="assets/js/magnific-popup.js"></script>
+   <script src="assets/js/nice-select.js"></script>
+   <script src="assets/js/purecounter.js"></script>
+   <script src="assets/js/countdown.js"></script>
+   <script src="assets/js/wow.js"></script>
+   <script src="assets/js/isotope-pkgd.js"></script>
+   <script src="assets/js/imagesloaded-pkgd.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/load-layout.js"></script>
+</body>
+
+</html>
