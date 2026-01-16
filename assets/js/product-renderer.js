@@ -17,16 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const product = getProductById(targetId);
-    if (!product) {
-        console.error("Product not found");
-        // Optionally redirect to 404 or show error
-        return;
+    if (product) {
+        // 2. Render Product Details
+        renderProductDetails(product);
+    } else {
+        console.error("Product not found: " + targetId);
     }
 
-    // 2. Render Product Details
-    renderProductDetails(product);
-
-    // 3. Setup Event Listeners
+    // 3. Setup Event Listeners (Run regardless of product finding to keep UI interactive)
     setupEventListeners(targetId);
 });
 
@@ -72,35 +70,57 @@ function renderProductDetails(product) {
 function setupEventListeners(productId) {
     const buyNowBtns = document.querySelectorAll('.tp-product-details-buy-now-btn');
     const addToCartBtns = document.querySelectorAll('.tp-product-details-add-to-cart-btn');
-    const qtyInput = document.querySelector('.tp-cart-input');
-    const plusBtn = document.querySelector('.tp-cart-plus');
-    const minusBtn = document.querySelector('.tp-cart-minus');
 
-    // Quantity Logic (keep single for now as it targets the main product page input)
-    // Note: If QuickView has its own quantity input, we'd need to scope this better.
-    if (plusBtn && qtyInput) {
-        plusBtn.addEventListener('click', () => {
-            let val = parseInt(qtyInput.value) || 1;
-            qtyInput.value = val + 1;
-        });
-    }
+    // Quantity Logic (Handle all instances, e.g. Main and QuickView)
+    // We assume the plus/minus buttons are siblings of the input or in the same container
+    const quantityContainers = document.querySelectorAll('.tp-product-quantity');
 
-    if (minusBtn && qtyInput) {
-        minusBtn.addEventListener('click', () => {
-            let val = parseInt(qtyInput.value) || 1;
-            if (val > 1) qtyInput.value = val - 1;
-        });
-    }
+    quantityContainers.forEach(container => {
+        const minusBtn = container.querySelector('.tp-cart-minus');
+        const plusBtn = container.querySelector('.tp-cart-plus');
+        const input = container.querySelector('.tp-cart-input');
+
+        if (plusBtn && input) {
+            // Clone to remove old listeners if any (though unlikely if re-injected)
+            const newPlus = plusBtn.cloneNode(true);
+            plusBtn.parentNode.replaceChild(newPlus, plusBtn);
+
+            newPlus.addEventListener('click', () => {
+                let val = parseInt(input.value) || 1;
+                console.log('Plus clicked. Old:', input.value, 'New:', val + 1);
+                input.value = val + 1;
+            });
+        }
+
+        if (minusBtn && input) {
+            const newMinus = minusBtn.cloneNode(true);
+            minusBtn.parentNode.replaceChild(newMinus, minusBtn);
+
+            newMinus.addEventListener('click', () => {
+                let val = parseInt(input.value) || 1;
+                if (val > 1) input.value = val - 1;
+            });
+        }
+    });
 
     // Buy Now Logic - Handle Multiple Buttons
     buyNowBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            // Try to find a quantity input relative to this button or default to the main one
-            // specific to the container of the button if possible, else fallback
-            const specificQtyInput = btn.closest('.tp-product-details-action-wrapper')?.querySelector('.tp-cart-input');
-            const finalQtyInput = specificQtyInput || qtyInput;
-            const qty = finalQtyInput ? finalQtyInput.value : 1;
+
+            // 1. Find the quantity input associated with THIS button's context
+            let qty = 1;
+
+            // Scenario A: Button is inside a wrapper that also has the quantity input (unlikely in this layout but possible)
+            const wrapper = btn.closest('.tp-product-details-action-wrapper');
+            if (wrapper) {
+                const input = wrapper.querySelector('.tp-cart-input');
+                if (input) qty = parseInt(input.value) || 1;
+            } else {
+                // Scenario B: Fallback to the first main input found
+                const mainInput = document.querySelector('.tp-cart-input');
+                if (mainInput) qty = parseInt(mainInput.value) || 1;
+            }
 
             console.log(`Buy Now Clicked. ID: ${productId}, Qty: ${qty}`);
 
@@ -113,6 +133,7 @@ function setupEventListeners(productId) {
     addToCartBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            // Similar logic for getting quantity can be added here
             alert('تمت إضافة المنتج إلى السلة');
         });
     });

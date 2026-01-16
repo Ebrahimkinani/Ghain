@@ -258,6 +258,7 @@ $(document).ready(function () {
 	// Quantity Plus
 	$(document).on('click', '.tp-cart-plus', function () {
 		var row = $(this).closest('tr');
+		if (row.length === 0) return; // Not in a table (e.g. product details page)
 		var id = row.data('id');
 		var input = row.find('input');
 		var newVal = parseInt(input.val()) + 1;
@@ -268,6 +269,7 @@ $(document).ready(function () {
 	// Quantity Minus
 	$(document).on('click', '.tp-cart-minus', function () {
 		var row = $(this).closest('tr');
+		if (row.length === 0) return; // Not in a table
 		var id = row.data('id');
 		var input = row.find('input');
 		var newVal = parseInt(input.val()) - 1;
@@ -523,9 +525,36 @@ $(document).ready(function () {
 			meanRevealPosition: "right",
 			meanMenuCloseSize: "18px",
 			meanMenuOpenSize: "18px",
+			meanExpand: '<i class="fa-regular fa-plus"></i>',
+			meanContract: '<i class="fa-regular fa-minus"></i>',
 			siteLogo: "assets/img/logo/logo.svg"
 		});
 	}
+
+	// Fix: Make text clickable (Toggle for parents, Navigate for leaves)
+	$('body').on('click', '.mean-container .mean-nav ul li a:not(.mean-expand)', function (e) {
+		var $this = $(this);
+		var href = $this.attr('href');
+
+		// Allow navigation for "shop.html" (Categories)
+		if (href && href.includes('shop.html')) {
+			window.location.href = href;
+			return; // Stop further processing
+		}
+
+		e.preventDefault();
+		var $expandBtn = $this.parent().find('.mean-expand');
+
+		if ($expandBtn.length > 0) {
+			// If it has a submenu, toggle it
+			$expandBtn.trigger('click');
+		} else {
+			// If it's a leaf node, navigate
+			if (href && href !== '#' && href !== 'javascript:void(0)') {
+				window.location.href = href;
+			}
+		}
+	});
 
 	// 07. Mobile Sidebar
 	$('.tp-offcanvas-open-btn').on('click', function () {
