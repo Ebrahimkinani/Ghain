@@ -11,7 +11,6 @@
    <!-- Place favicon.ico in the root directory -->
    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
 
-   <!-- CSS here -->
    <link rel="stylesheet" href="assets/css/bootstrap-rtl.css">
    <link rel="stylesheet" href="assets/css/animate.css">
    <link rel="stylesheet" href="assets/css/swiper-bundle.css">
@@ -23,6 +22,9 @@
    <link rel="stylesheet" href="assets/css/main.css">
    <link rel="stylesheet" href="assets/css/rtl-custom.css">
    <link rel="stylesheet" href="assets/css/hero-slider.css">
+   <link rel="stylesheet" href="assets/css/glassy-header.css">
+   <link rel="stylesheet" href="assets/css/scroll-animations.css">
+
 
 </head>
 
@@ -38,79 +40,76 @@
 
    <main>
 
-      <!-- Hero Slider Area Start -->
+      <!-- Hero Video Area Start -->
       <section class="ghain-hero-slider">
-         <div class="swiper-container ghain-hero-swiper" dir="rtl">
-            <div class="swiper-wrapper">
-
-               <!-- Slide 1: New Collection 2026 -->
-               <div class="swiper-slide ghain-hero-slide">
-                  <img src="assets/img/slider/2/slider-1.png" alt="تشكيلة الملابس الجديدة 2026"
-                     class="ghain-hero-slide__bg" loading="eager">
-                  <div class="ghain-hero-slide__overlay"></div>
-                  <div class="ghain-hero-slide__content">
-
-                     <div class="ghain-hero-shop-text">تسوقي أزياء نسائية</div>
-                     <div class="ghain-hero-slide__cta">
-                        <a href="#makhawir-section" class="ghain-hero-btn ghain-hero-btn--primary">تسوق الآن</a>
-                     </div>
-                  </div>
-               </div>
-
-               <!-- Slide 2: Summer Collection -->
-               <div class="swiper-slide ghain-hero-slide">
-                  <img src="assets/img/slider/2/slider-2.png" alt="تشكيلة الصيف" class="ghain-hero-slide__bg"
-                     loading="lazy">
-                  <div class="ghain-hero-slide__overlay"></div>
-                  <div class="ghain-hero-slide__content">
-                     <div class="ghain-hero-shop-text">تسوقي أزياء نسائية</div>
-                     <div class="ghain-hero-slide__cta">
-                        <a href="#makhawir-section" class="ghain-hero-btn ghain-hero-btn--primary">تسوق الآن</a>
-                     </div>
-                  </div>
-               </div>
-
-               <!-- Slide 3: Winter Collection -->
-               <div class="swiper-slide ghain-hero-slide">
-                  <img src="assets/img/slider/2/slider-3.png" alt="تصاميم جديدة مذهلة" class="ghain-hero-slide__bg"
-                     loading="lazy">
-                  <div class="ghain-hero-slide__overlay"></div>
-                  <div class="ghain-hero-slide__content">
-                     <div class="ghain-hero-shop-text">تسوقي أزياء نسائية</div>
-                     <div class="ghain-hero-slide__cta">
-                        <a href="#makhawir-section" class="ghain-hero-btn ghain-hero-btn--primary">تسوق الآن</a>
-                     </div>
-                  </div>
-               </div>
-
-            </div>
-
-            <!-- Navigation Arrows -->
-            <div class="ghain-hero-arrow ghain-hero-arrow--prev" role="button" aria-label="الشريحة السابقة"
-               tabindex="0">
-               <i class="fa-solid fa-chevron-right"></i>
-            </div>
-            <div class="ghain-hero-arrow ghain-hero-arrow--next" role="button" aria-label="الشريحة التالية"
-               tabindex="0">
-               <i class="fa-solid fa-chevron-left"></i>
-            </div>
-
-            <!-- Pagination Dots -->
-            <div class="ghain-hero-dots"></div>
-
-            <!-- Flying Side Images -->
-            <div class="ghain-hero-side-images">
-               <img src="assets/img/products/10.png" alt="" class="ghain-hero-side-img ghain-hero-side-img--left">
-               <img src="assets/img/products/11.png" alt="" class="ghain-hero-side-img ghain-hero-side-img--right">
-            </div>
+         <div class="ghain-hero-video-container">
+            <div id="hero-video-player"></div>
          </div>
       </section>
-      <!-- Hero Slider Area End -->
+      <!-- Hero Video Area End -->
+
+      <!-- YouTube Player API Script -->
+      <script>
+         // Load YouTube IFrame Player API
+         var tag = document.createElement('script');
+         tag.src = "https://www.youtube.com/iframe_api";
+         var firstScriptTag = document.getElementsByTagName('script')[0];
+         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+         var player;
+         function onYouTubeIframeAPIReady() {
+            player = new YT.Player('hero-video-player', {
+               height: '100%',
+               width: '100%',
+               videoId: 'kvL2_gZnNmk',
+               playerVars: {
+                  'autoplay': 1,
+                  'mute': 1,
+                  'controls': 0,
+                  'showinfo': 0,
+                  'rel': 0,
+                  'modestbranding': 1,
+                  'start': 13,
+                  'enablejsapi': 1,
+                  'loop': 1,
+                  'playlist': 'kvL2_gZnNmk'
+               },
+               events: {
+                  'onReady': onPlayerReady,
+                  'onStateChange': onPlayerStateChange
+               }
+            });
+         }
+
+         function onPlayerReady(event) {
+            event.target.playVideo();
+         }
+
+         function onPlayerStateChange(event) {
+            // Check current time and loop between 13-30 seconds
+            if (event.data == YT.PlayerState.PLAYING) {
+               var checkTime = setInterval(function () {
+                  if (player && player.getCurrentTime) {
+                     var currentTime = player.getCurrentTime();
+                     if (currentTime >= 30) {
+                        player.seekTo(13);
+                     }
+                  }
+               }, 100); // Check every 100ms
+
+               // Store interval ID to clear it later if needed
+               if (window.heroVideoInterval) {
+                  clearInterval(window.heroVideoInterval);
+               }
+               window.heroVideoInterval = checkTime;
+            }
+         }
+      </script>
 
 
 
       <!-- category area start -->
-      <section class="tp-category-area pb-95 pt-95">
+      <section class="tp-category-area pb-95 pt-95 scroll-animate">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
@@ -310,7 +309,7 @@
       <!-- Makhawir Sections Start -->
 
       <!-- 1. Silk Makhawir Section -->
-      <section class="tp-product-area pb-50">
+      <section class="tp-product-area pb-50 scroll-animate-left">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
@@ -505,7 +504,7 @@
       </section>
 
       <!-- 2. Cotton Makhawir Section -->
-      <section class="tp-product-area pb-50">
+      <section class="tp-product-area pb-50 scroll-animate-right">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
@@ -700,7 +699,7 @@
       </section>
 
       <!-- 3. Girls Makhawir Section -->
-      <section class="tp-product-area pb-50">
+      <section class="tp-product-area pb-50 scroll-animate">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
@@ -895,7 +894,7 @@
       </section>
 
       <!-- 4. Makhour & Sheila Section -->
-      <section class="tp-product-area pb-90" id="makhawir-section">
+      <section class="tp-product-area pb-90 scroll-animate" id="makhawir-section">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
@@ -1093,7 +1092,7 @@
       <!-- Jalabiya Sections Start -->
 
       <!-- 1. Quiet Elegance Section -->
-      <section class="tp-product-area pb-50 pt-50">
+      <section class="tp-product-area pb-50 pt-50 scroll-animate">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
@@ -1258,7 +1257,7 @@
       </section>
 
       <!-- 2. Modern Cuts Section -->
-      <section class="tp-product-area pb-50 pt-50">
+      <section class="tp-product-area pb-50 pt-50 scroll-animate">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
@@ -1441,7 +1440,7 @@
 
 
       <!-- testimonial area start -->
-      <section class="tp-testimonial-area grey-bg-7 pt-130 pb-135">
+      <section class="tp-testimonial-area grey-bg-7 pt-130 pb-135 scroll-animate">
          <div class="container">
             <div class="row justify-content-center">
                <div class="col-xl-12">
@@ -1565,7 +1564,7 @@
 
 
       <!-- feature area start -->
-      <section class="tp-feature-area tp-feature-border-2 pb-80">
+      <section class="tp-feature-area tp-feature-border-2 pb-80 scroll-animate">
          <div class="container">
             <div class="tp-feature-inner-2">
                <div class="row align-items-center">
@@ -1910,6 +1909,7 @@
    <script src="assets/js/favorites.js?v=1.4"></script>
    <script src="assets/js/products-data.js?v=2"></script>
    <script src="assets/js/home-renderer.js?v=2"></script>
+   <script src="assets/js/scroll-animations.js"></script>
 </body>
 
 </html>
