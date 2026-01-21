@@ -5,7 +5,9 @@
 /* Container */
 .ghain-hero-slider {
     position: relative;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     overflow: hidden;
     /* Mobile: increased height */
     height: clamp(500px, 75vh, 700px);
