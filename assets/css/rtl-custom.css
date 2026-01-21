@@ -560,3 +560,56 @@ header .logo img {
     width: 140px !important;
     height: auto !important;
 }
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 767px) {
+
+    /* Font Size Reductions */
+    .tp-section-title-2 {
+        font-size: 24px !important;
+    }
+
+    .tp-section-title-pre-2 {
+        font-size: 14px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .tp-product-title-2 {
+        font-size: 14px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .tp-product-tag-2 a {
+        font-size: 12px !important;
+    }
+
+    .tp-product-price-2 {
+        font-size: 14px !important;
+    }
+
+    /* Product Card Size Reductions */
+    .tp-product-item-2 {
+        margin-bottom: 20px !important;
+    }
+
+    .tp-product-content-2 {
+        padding-top: 10px !important;
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* Adjust grid spacing if needed */
+    .mb-40 {
+        margin-bottom: 20px !important;
+    }
+
+    /* Hero section font sizing */
+    .ghain-hero-content h1 {
+        font-size: 28px !important;
+    }
+
+    .ghain-hero-content p {
+        font-size: 16px !important;
+    }
+}
