@@ -273,6 +273,14 @@ only screen and (min-width: 576px) and (max-width: 767px),
 .tp-product-details-thumb-wrapper {
     margin-right: 0 !important;
     margin-left: 20px !important;
+    width: 100% !important;
+}
+
+@media (min-width: 576px) {
+    .tp-product-details-thumb-wrapper .tab-content {
+        flex-grow: 1 !important;
+        min-width: 0 !important;
+    }
 }
 
 .tp-product-details-thumb-wrapper .nav-tabs {
@@ -295,7 +303,13 @@ only screen and (min-width: 576px) and (max-width: 767px),
     margin-left: 15px !important;
 }
 
-/* Increase Main Product Image Size */
+/* Increase Main Product Image Size & Fix Production Narrowing */
+.tp-product-details-nav-main-thumb,
+.tp-product-details-nav-main-thumb img {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
 @media (min-width: 576px) {
     .tp-product-details-nav-main-thumb {
         height: 600px !important;
