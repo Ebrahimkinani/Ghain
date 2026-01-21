@@ -454,3 +454,42 @@ only screen and (min-width: 576px) and (max-width: 767px),
     left: auto;
     transform-origin: right center;
 }
+
+/* Product Card Border & Fixes */
+.tp-product-item-2 {
+    border: 1px solid red !important;
+    padding: 0 !important;
+    /* remove any default padding */
+}
+
+.tp-product-item-2 .tp-product-thumb-2 {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    /* Remove line-height spacing */
+}
+
+.tp-product-item-2 .tp-product-thumb-2 a {
+    display: block !important;
+    /* Ensure anchor is block to remove inline gaps */
+    line-height: 0 !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tp-product-item-2 .tp-product-thumb-2 img {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-radius: 0 !important;
+    /* Force no radius on image itself to fill container */
+}
+
+.tp-product-item-2::after,
+.tp-product-item-2::before {
+    display: none !important;
+}

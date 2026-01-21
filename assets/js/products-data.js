@@ -12,7 +12,7 @@ const productsData = [
         oldPrice: '450.00',
         description: 'مخور حرير بجودة عالية وتصميم عصري يناسب جميع المناسبات.',
         image: 'assets/img/products/1.png',
-        images: ['assets/img/products/1.png', 'assets/img/products/4.png'],
+        images: ['assets/img/products/1.png', 'assets/img/products/1.png'],
         rating: 5,
         reviews: 36,
         inStock: true
@@ -38,7 +38,7 @@ const productsData = [
         oldPrice: '220.00',
         description: 'مخور بناتي بتصاميم جذابة وعصرية.',
         image: 'assets/img/products/3.png',
-        images: ['assets/img/products/3.png', 'assets/img/products/6.png'],
+        images: ['assets/img/products/3.png', 'assets/img/products/1.png'],
         rating: 5,
         reviews: 12,
         inStock: true
@@ -50,8 +50,8 @@ const productsData = [
         price: '480.00',
         oldPrice: '600.00',
         description: 'جلابية فاخرة للمناسبات الخاصة والأعياد.',
-        image: 'assets/img/products/4.png',
-        images: ['assets/img/products/4.png', 'assets/img/products/5.png'],
+        image: 'assets/img/products/1.png',
+        images: ['assets/img/products/1.png', 'assets/img/products/2.png'],
         rating: 5,
         reviews: 45,
         inStock: true
@@ -63,8 +63,8 @@ const productsData = [
         price: '180.00',
         oldPrice: '250.00',
         description: 'جلابية رجالي مريحة وأنيقة.',
-        image: 'assets/img/products/5.png',
-        images: ['assets/img/products/5.png', 'assets/img/products/4.png'],
+        image: 'assets/img/products/2.png',
+        images: ['assets/img/products/2.png', 'assets/img/products/1.png'],
         rating: 4,
         reviews: 18,
         inStock: true
@@ -76,8 +76,8 @@ const productsData = [
         price: '450.00',
         oldPrice: '550.00',
         description: 'طقم متكامل من الشيلة والمخور بنفس التطريز.',
-        image: 'assets/img/products/6.png',
-        images: ['assets/img/products/6.png', 'assets/img/products/1.png'],
+        image: 'assets/img/products/3.png',
+        images: ['assets/img/products/2.png', 'assets/img/products/1.png'],
         rating: 5,
         reviews: 30,
         inStock: true

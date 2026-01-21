@@ -19370,7 +19370,8 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  /* Added subtle shadow */
+  border: 1px solid red !important;
+  /* Added subtle shadow and red border */
 }
 
 /* Added padding for content spacing */
