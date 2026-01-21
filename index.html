@@ -21,9 +21,7 @@
    <link rel="stylesheet" href="assets/css/spacing.css">
    <link rel="stylesheet" href="assets/css/main.css">
    <link rel="stylesheet" href="assets/css/rtl-custom.css">
-   <link rel="stylesheet" href="assets/css/hero-slider.css">
-   <link rel="stylesheet" href="assets/css/glassy-header.css">
-   <link rel="stylesheet" href="assets/css/scroll-animations.css">
+   <link rel="stylesheet" href="assets/css/home.css">
 
 
 </head>
@@ -48,72 +46,13 @@
       </section>
       <!-- Hero Video Area End -->
 
-      <!-- YouTube Player API Script -->
-      <script>
-         // Load YouTube IFrame Player API
-         var tag = document.createElement('script');
-         tag.src = "https://www.youtube.com/iframe_api";
-         var firstScriptTag = document.getElementsByTagName('script')[0];
-         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-         var player;
-         function onYouTubeIframeAPIReady() {
-            player = new YT.Player('hero-video-player', {
-               height: '100%',
-               width: '100%',
-               videoId: 'JSJRRm2XEG8',
-               playerVars: {
-                  'autoplay': 1,
-                  'mute': 1,
-                  'controls': 0,
-                  'showinfo': 0,
-                  'rel': 0,
-                  'modestbranding': 1,
-                  'start': 7,
-                  'enablejsapi': 1,
-                  'loop': 1,
-                  'playlist': 'JSJRRm2XEG8'
-               },
-               events: {
-                  'onReady': onPlayerReady,
-                  'onStateChange': onPlayerStateChange
-               }
-            });
-         }
-
-         function onPlayerReady(event) {
-            event.target.playVideo();
-         }
-
-         function onPlayerStateChange(event) {
-            // Check current time and loop between 7-19 seconds
-            if (event.data == YT.PlayerState.PLAYING) {
-               var checkTime = setInterval(function () {
-                  if (player && player.getCurrentTime) {
-                     var currentTime = player.getCurrentTime();
-                     if (currentTime >= 19) {
-                        player.seekTo(7);
-                     }
-                  }
-               }, 100); // Check every 100ms
-
-               // Store interval ID to clear it later if needed
-               if (window.heroVideoInterval) {
-                  clearInterval(window.heroVideoInterval);
-               }
-               window.heroVideoInterval = checkTime;
-            }
-         }
-      </script>
-
-
 
       <!-- category area start -->
-      <section class="tp-category-area pb-50 pt-50 scroll-animate">
+      <section class="tp-category-area scroll-animate">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
-                  <div class="tp-section-title-wrapper-2 text-center mb-50">
+                  <div class="tp-section-title-wrapper-2 text-center">
                      <span class="tp-section-title-pre-2">
                         تسوقي يا جميلة
 
@@ -125,7 +64,7 @@
             <div class="row">
                <div class="col-xl-12">
                   <div class="tp-category-slider-2">
-                     <div class="tp-product-popular-slider-active swiper-container mb-50">
+                     <div class="tp-product-popular-slider-active swiper-container">
                         <div class="swiper-wrapper">
                            <div class="swiper-slide">
                               <div class="tp-product-item-2 mb-40">
@@ -309,11 +248,11 @@
       <!-- Makhawir Sections Start -->
 
       <!-- 1. Silk Makhawir Section -->
-      <section class="tp-product-area pb-30 scroll-animate-left">
+      <section class="tp-product-area scroll-animate-left">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
-                  <div class="tp-section-title-wrapper-2 text-center mb-35">
+                  <div class="tp-section-title-wrapper-2 text-center">
                      <span class="tp-section-title-pre-2">تسوقي يا جميلة</span>
                      <h3 class="tp-section-title-2">مخاوير حرير</h3>
                   </div>
@@ -322,7 +261,7 @@
             <div class="row">
                <div class="col-xl-12">
                   <div class="tp-category-slider-2">
-                     <div class="tp-makhawir-slider-active swiper-container mb-50">
+                     <div class="tp-makhawir-slider-active swiper-container">
                         <div class="swiper-wrapper">
                            <div class="swiper-slide">
                               <div class="tp-product-item-2 mb-40">
@@ -504,11 +443,11 @@
       </section>
 
       <!-- 2. Cotton Makhawir Section -->
-      <section class="tp-product-area pb-30 scroll-animate-right">
+      <section class="tp-product-area scroll-animate-right">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
-                  <div class="tp-section-title-wrapper-2 text-center mb-35">
+                  <div class="tp-section-title-wrapper-2 text-center">
                      <span class="tp-section-title-pre-2">تسوقي يا جميلة</span>
                      <h3 class="tp-section-title-2">مخاوير قطن</h3>
                   </div>
@@ -517,7 +456,7 @@
             <div class="row">
                <div class="col-xl-12">
                   <div class="tp-category-slider-2">
-                     <div class="tp-makhawir-slider-active swiper-container mb-50">
+                     <div class="tp-makhawir-slider-active swiper-container">
                         <div class="swiper-wrapper">
                            <div class="swiper-slide">
                               <div class="tp-product-item-2 mb-40">
@@ -699,11 +638,11 @@
       </section>
 
       <!-- 3. Girls Makhawir Section -->
-      <section class="tp-product-area pb-30 scroll-animate">
+      <section class="tp-product-area scroll-animate">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
-                  <div class="tp-section-title-wrapper-2 text-center mb-35">
+                  <div class="tp-section-title-wrapper-2 text-center">
                      <span class="tp-section-title-pre-2">تسوقي يا جميلة</span>
                      <h3 class="tp-section-title-2">مخاوير للبنوتات</h3>
                   </div>
@@ -712,7 +651,7 @@
             <div class="row">
                <div class="col-xl-12">
                   <div class="tp-category-slider-2">
-                     <div class="tp-makhawir-slider-active swiper-container mb-50">
+                     <div class="tp-makhawir-slider-active swiper-container">
                         <div class="swiper-wrapper">
                            <div class="swiper-slide">
                               <div class="tp-product-item-2 mb-40">
@@ -894,11 +833,11 @@
       </section>
 
       <!-- 4. Makhour & Sheila Section -->
-      <section class="tp-product-area pb-30 scroll-animate" id="makhawir-section">
+      <section class="tp-product-area scroll-animate" id="makhawir-section">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
-                  <div class="tp-section-title-wrapper-2 text-center mb-35">
+                  <div class="tp-section-title-wrapper-2 text-center">
                      <span class="tp-section-title-pre-2">تسوقي يا جميلة</span>
                      <h3 class="tp-section-title-2">مخور و شيلة</h3>
                   </div>
@@ -907,7 +846,7 @@
             <div class="row">
                <div class="col-xl-12">
                   <div class="tp-category-slider-2">
-                     <div class="tp-makhawir-slider-active swiper-container mb-50">
+                     <div class="tp-makhawir-slider-active swiper-container">
                         <div class="swiper-wrapper">
                            <div class="swiper-slide">
                               <div class="tp-product-item-2 mb-40">
@@ -1092,11 +1031,11 @@
       <!-- Jalabiya Sections Start -->
 
       <!-- 1. Quiet Elegance Section -->
-      <section class="tp-product-area pb-30 pt-30 scroll-animate">
+      <section class="tp-product-area scroll-animate">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
-                  <div class="tp-section-title-wrapper-2 text-center mb-35">
+                  <div class="tp-section-title-wrapper-2 text-center">
                      <span class="tp-section-title-pre-2">راحة فاخرة و جمال في كل لحظة</span>
                      <h3 class="tp-section-title-2">جلابية الاناقة الهادئة</h3>
                   </div>
@@ -1105,7 +1044,7 @@
             <div class="row">
                <div class="col-xl-12">
                   <div class="tp-category-slider-2">
-                     <div class="tp-makhawir-slider-active swiper-container mb-50">
+                     <div class="tp-makhawir-slider-active swiper-container">
                         <div class="swiper-wrapper">
                            <!-- Product 1 -->
                            <div class="swiper-slide">
@@ -1257,11 +1196,11 @@
       </section>
 
       <!-- 2. Modern Cuts Section -->
-      <section class="tp-product-area pb-30 pt-30 scroll-animate">
+      <section class="tp-product-area scroll-animate">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
-                  <div class="tp-section-title-wrapper-2 text-center mb-35">
+                  <div class="tp-section-title-wrapper-2 text-center">
                      <span class="tp-section-title-pre-2">راحة فاخرة و جمال في كل لحظة</span>
                      <h3 class="tp-section-title-2">جلابية القصات الحديثة</h3>
                   </div>
@@ -1270,7 +1209,7 @@
             <div class="row">
                <div class="col-xl-12">
                   <div class="tp-category-slider-2">
-                     <div class="tp-makhawir-slider-active swiper-container mb-50">
+                     <div class="tp-makhawir-slider-active swiper-container">
                         <div class="swiper-wrapper">
                            <!-- Product 1 -->
                            <div class="swiper-slide">
@@ -1421,7 +1360,7 @@
             <!-- View All Button -->
             <div class="row">
                <div class="col-xl-12">
-                  <div class="tp-product-btn-2 text-center mt-20 mb-40">
+                  <div class="tp-product-btn-2 text-center">
                      <a href="jalabiyas.html" class="tp-btn tp-btn-border">عرض الكل</a>
                   </div>
                </div>
@@ -1440,7 +1379,7 @@
 
 
       <!-- testimonial area start -->
-      <section class="tp-testimonial-area grey-bg-7 pt-80 pb-80 scroll-animate">
+      <section class="tp-testimonial-area grey-bg-7 scroll-animate">
          <div class="container">
             <div class="row justify-content-center">
                <div class="col-xl-12">
@@ -1564,7 +1503,7 @@
 
 
       <!-- feature area start -->
-      <section class="tp-feature-area tp-feature-border-2 pb-80 scroll-animate">
+      <section class="tp-feature-area tp-feature-border-2 scroll-animate">
          <div class="container">
             <div class="tp-feature-inner-2">
                <div class="row align-items-center">
@@ -1910,6 +1849,7 @@
    <script src="assets/js/products-data.js?v=2"></script>
    <script src="assets/js/home-renderer.js?v=2"></script>
    <script src="assets/js/scroll-animations.js"></script>
+   <script src="assets/js/home.js"></script>
 </body>
 
 </html>

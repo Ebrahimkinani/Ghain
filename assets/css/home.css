@@ -1,4 +1,129 @@
 /* ========================================
+   HOME CSS
+   Contains: Hero Slider, Glassy Header, Scroll Animations, Spacing System
+   ======================================== */
+
+/* ========================================
+   0. HOMEPAGE SPACING SYSTEM
+   ======================================== */
+/* 
+   Consistent spacing scale for homepage sections:
+   - Desktop: 64px section padding
+   - Tablet: 40px section padding  
+   - Mobile: 28px section padding
+   - Title margins: 32px desktop / 24px mobile
+   - Slider margins: 40px desktop / 28px mobile
+*/
+
+/* Section Padding Overrides */
+.tp-category-area,
+.tp-product-area,
+.tp-testimonial-area,
+.tp-feature-area {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+}
+
+/* Tablet spacing */
+@media (max-width: 991px) {
+
+    .tp-category-area,
+    .tp-product-area,
+    .tp-testimonial-area,
+    .tp-feature-area {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+}
+
+/* Mobile spacing */
+@media (max-width: 575px) {
+
+    .tp-category-area,
+    .tp-product-area,
+    .tp-testimonial-area,
+    .tp-feature-area {
+        padding-top: 28px !important;
+        padding-bottom: 28px !important;
+    }
+}
+
+/* Title Wrapper Margins - Normalize */
+.tp-section-title-wrapper-2 {
+    margin-bottom: 32px !important;
+}
+
+@media (max-width: 575px) {
+    .tp-section-title-wrapper-2 {
+        margin-bottom: 24px !important;
+    }
+}
+
+/* Slider Container Margins - Normalize */
+.tp-product-popular-slider-active,
+.tp-makhawir-slider-active {
+    margin-bottom: 40px !important;
+}
+
+@media (max-width: 575px) {
+
+    .tp-product-popular-slider-active,
+    .tp-makhawir-slider-active {
+        margin-bottom: 28px !important;
+    }
+}
+
+/* Product Item Bottom Margins - Remove to prevent double spacing */
+.tp-product-item-2 {
+    margin-bottom: 0 !important;
+}
+
+/* Swiper Scrollbar - Prevent extra bottom space */
+.swiper-scrollbar {
+    margin-top: 20px;
+    margin-bottom: 0 !important;
+}
+
+/* Testimonial Section - Grey Background Adjustment */
+.tp-testimonial-area.grey-bg-7 {
+    background-color: #f8f8f8;
+}
+
+/* Feature Area - Reduce excessive padding */
+.tp-feature-area {
+    padding-bottom: 64px !important;
+}
+
+@media (max-width: 991px) {
+    .tp-feature-area {
+        padding-bottom: 40px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .tp-feature-area {
+        padding-bottom: 28px !important;
+    }
+}
+
+/* RTL Margin Fixes - Replace mr-* with ms-* for RTL */
+[dir="rtl"] .mr-10,
+[dir="rtl"] .tp-feature-icon-2.mr-10,
+[dir="rtl"] .tp-testimonial-avater.mr-10 {
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+}
+
+/* View All Button Spacing */
+.tp-product-btn-2 {
+    margin-top: 20px !important;
+    margin-bottom: 0 !important;
+}
+
+/* ========================================
+   1. HERO SLIDER CSS
+   ======================================== */
+/* ========================================
    HERO SLIDER - FULLY RESPONSIVE
    ======================================== */
 
@@ -51,9 +176,8 @@
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    object-fit: cover;
     pointer-events: none;
-    /* Prevent interaction with video if needed */
+    border: none;
 }
 
 /* Video iframe inside the player */
@@ -64,13 +188,25 @@
     width: 100%;
     height: 100%;
     border: none;
+    pointer-events: none;
 }
 
-/* Ensure video covers the entire container without forcing 100vh */
+/* Ensure video covers the entire container */
+/* Case 1: Screen is wider than 16:9 - Fit to width, crop height */
+@media (min-aspect-ratio: 16/9) {
+    #hero-video-player {
+        width: 100vw !important;
+        height: 56.25vw !important;
+        /* 100 * 9/16 */
+    }
+}
+
+/* Case 2: Screen is taller than 16:9 - Fit to height, crop width */
 @media (max-aspect-ratio: 16/9) {
     #hero-video-player {
-        width: 100%;
-        height: 100%;
+        width: auto !important;
+        height: 100% !important;
+        aspect-ratio: 16/9;
     }
 }
 
@@ -434,4 +570,215 @@
     .ghain-hero-side-img {
         width: clamp(200px, 18vw, 300px);
     }
+}
+
+/* ========================================
+   2. GLASSY HEADER CSS
+   ======================================== */
+/* Glassy Header Styles */
+
+/* Default state - Glassy effect */
+.tp-header-bottom-2 {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Logo styling for glassy header */
+.tp-header-bottom-2 .logo img {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Menu links styling for glassy header */
+.tp-header-bottom-2 .main-menu nav ul li a {
+    color: var(--tp-common-black);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Header action icons for glassy header */
+.tp-header-bottom-2 .tp-header-action-btn {
+    color: var(--tp-common-black);
+    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.8));
+    transition: all 0.3s ease-in-out;
+}
+
+/* Sticky state - White background */
+.tp-header-sticky.header-sticky {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Remove text shadow when sticky */
+.tp-header-sticky.header-sticky .main-menu nav ul li a {
+    text-shadow: none;
+}
+
+/* Remove drop shadow from logo when sticky */
+.tp-header-sticky.header-sticky .logo img {
+    filter: none;
+}
+
+/* Remove drop shadow from icons when sticky */
+.tp-header-sticky.header-sticky .tp-header-action-btn {
+    filter: none;
+}
+
+/* Submenu styling for glassy header */
+.tp-header-bottom-2 .tp-submenu {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Submenu links */
+.tp-header-bottom-2 .tp-submenu li a {
+    text-shadow: none;
+}
+
+/* Hamburger menu icon */
+.tp-header-bottom-2 .tp-offcanvas-open-btn {
+    color: var(--tp-common-black);
+    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.8));
+}
+
+.tp-header-sticky.header-sticky .tp-offcanvas-open-btn {
+    filter: none;
+}
+
+/* Badge styling */
+.tp-header-action-badge {
+    background: var(--tp-theme-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth transition for header height */
+.tp-header-bottom-2 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: padding 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.tp-header-sticky.header-sticky {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* Ensure header is positioned correctly */
+.tp-header-area {
+    position: relative;
+    z-index: 999;
+}
+
+/* Make header sticky from the start */
+.tp-header-bottom-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+/* Add padding to body to prevent content from hiding under header */
+body {
+    padding-top: 55px;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1199px) {
+    body {
+        padding-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        padding-top: 48px;
+    }
+
+    .tp-header-bottom-2 {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .tp-header-sticky.header-sticky {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+}
+
+/* ========================================
+   3. SCROLL ANIMATIONS CSS
+   ======================================== */
+/* Scroll Animation Styles */
+
+/* Initial state - sections are hidden */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Active state - sections are visible */
+.scroll-animate.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay variations for staggered animations */
+.scroll-animate.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.scroll-animate.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.scroll-animate.delay-3 {
+    transition-delay: 0.3s;
+}
+
+/* Alternative animation: Fade in from left */
+.scroll-animate-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Alternative animation: Fade in from right */
+.scroll-animate-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate-right.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale animation */
+.scroll-animate-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animate-scale.animate-in {
+    opacity: 1;
+    transform: scale(1);
 }
