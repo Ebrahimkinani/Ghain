@@ -588,6 +588,8 @@
 
 /* Logo styling for glassy header */
 .tp-header-bottom-2 .logo img {
+    max-width: 170px;
+    height: auto;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     transition: filter 0.3s ease-in-out;
 }

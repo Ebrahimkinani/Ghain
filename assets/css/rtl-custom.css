@@ -493,3 +493,56 @@ only screen and (min-width: 576px) and (max-width: 767px),
 .tp-product-item-2::before {
     display: none !important;
 }
+
+/* Footer Styling - White Text for Arabic */
+.tp-footer-area,
+.tp-footer-area *,
+.tp-footer-widget-title,
+.tp-footer-widget p,
+.tp-footer-widget a,
+.tp-footer-widget span,
+.tp-footer-widget li,
+.tp-footer-widget-content,
+.tp-footer-copyright p,
+.tp-footer-copyright a {
+    color: #ffffff !important;
+}
+
+/* Footer Links Hover */
+.tp-footer-widget a:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Fix bullet points for Arabic RTL lists in footer */
+.tp-footer-widget ul {
+    list-style: none !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+}
+
+.tp-footer-widget ul li {
+    text-align: right !important;
+    direction: rtl !important;
+    position: relative !important;
+    padding-right: 20px !important;
+    padding-left: 0 !important;
+}
+
+/* Add proper bullet points for RTL */
+.tp-footer-widget ul li::before {
+    content: "• " !important;
+    position: absolute !important;
+    right: 0 !important;
+    left: auto !important;
+    color: #ffffff !important;
+}
+
+/* Global Logo Size Standardization */
+.logo img,
+.tp-header-bottom-2 .logo img,
+header .logo img {
+    max-width: 140px !important;
+    width: 140px !important;
+    height: auto !important;
+}
