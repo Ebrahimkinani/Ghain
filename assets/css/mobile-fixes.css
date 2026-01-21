@@ -1,0 +1,237 @@
+/* ========================================
+   MOBILE FIXES - Off-canvas and Responsive
+   ======================================== */
+
+/* Fix: Hide off-canvas close button when menu is not active */
+.offcanvas__area:not(.offcanvas-opened) {
+    visibility: hidden !important;
+}
+
+.offcanvas__area:not(.offcanvas-opened) .offcanvas__close-btn {
+    display: none !important;
+}
+
+/* Fix: Hide cart mini close button when cart is not active */
+.cartmini__area:not(.cartmini-opened) {
+    visibility: hidden !important;
+}
+
+.cartmini__area:not(.cartmini-opened) .cartmini__close-btn {
+    display: none !important;
+}
+
+/* Ensure off-canvas elements don't cause horizontal scroll */
+body {
+    overflow-x: hidden;
+}
+
+/* ========================================
+   GLOBAL MOBILE FIXES - ALL PAGES
+   ======================================== */
+
+/* Remove excessive top spacing on all pages */
+@media (max-width: 767px) {
+
+    /* Reduce top padding for all main sections */
+    main {
+        padding-top: 0 !important;
+    }
+
+    /* Fix breadcrumb area spacing - THIS IS THE MAIN FIX */
+    .breadcrumb__area,
+    .tp-breadcrumb__area {
+        padding-top: 80px !important;
+        padding-bottom: 20px !important;
+    }
+
+    /* Override pt-100 class on mobile */
+    .breadcrumb__area.pt-100,
+    .tp-breadcrumb__area.pt-100 {
+        padding-top: 80px !important;
+    }
+
+    /* Fix page banner spacing */
+    .tp-page-banner,
+    .page-banner {
+        padding-top: 80px !important;
+        padding-bottom: 30px !important;
+    }
+
+    /* Fix slider area spacing */
+    .tp-slider-area,
+    .slider-area {
+        margin-top: 0 !important;
+    }
+
+    /* Fix product area spacing */
+    .tp-product-area,
+    .product-area {
+        padding-top: 40px !important;
+    }
+
+    /* Fix category area spacing */
+    .tp-category-area,
+    .category-area {
+        padding-top: 40px !important;
+    }
+
+    /* Reduce ALL category card image heights on mobile (makhawir, jalabiyas, etc.) */
+    .tp-category-thumb img {
+        height: 220px !important;
+        object-fit: cover !important;
+    }
+
+    .tp-category-thumb {
+        height: auto !important;
+    }
+
+    /* Shop page - reduce card image height on mobile */
+    .custom-shop-card .tp-category-thumb img {
+        height: 220px !important;
+    }
+
+    .custom-shop-card .tp-category-thumb {
+        height: 220px !important;
+    }
+}
+
+/* ========================================
+   ABOUT PAGE RESPONSIVE FIXES
+   ======================================== */
+
+/* Mobile: Improve spacing and layout */
+@media (max-width: 767px) {
+
+    /* About banner section */
+    .tp-about-area {
+        padding-top: 60px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .tp-about-banner-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .tp-about-banner-subtitle {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .tp-about-banner-title {
+        font-size: 18px !important;
+        line-height: 1.5 !important;
+    }
+
+    .tp-about-banner-thumb {
+        margin-top: 20px;
+    }
+
+    /* History section - reduce padding */
+    .tp-history-area {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .tp-history-wrapper {
+        padding-right: 0 !important;
+    }
+
+    .tp-history-content {
+        margin-bottom: 20px !important;
+    }
+
+    .tp-history-title {
+        font-size: 22px !important;
+    }
+
+    .tp-history-thumb-wrapper {
+        margin-left: 0 !important;
+    }
+
+    /* Quote card section */
+    .tp-quote-card-area {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .tp-quote-card {
+        padding: 30px 20px !important;
+    }
+
+    .tp-quote-text {
+        font-size: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .tp-quote-flying-image {
+        max-width: 200px !important;
+    }
+
+    /* Work/Features section */
+    .tp-work-area {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .tp-work-section-title-wrapper {
+        margin-bottom: 30px !important;
+    }
+
+    .tp-work-section-title {
+        font-size: 24px !important;
+    }
+
+    .tp-work-item {
+        margin-bottom: 20px !important;
+    }
+
+    .tp-work-title {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+    }
+
+    .tp-work-icon {
+        margin-bottom: 15px;
+    }
+
+    .tp-work-icon svg {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .tp-work-quote p {
+        font-size: 14px !important;
+    }
+}
+
+/* Tablet: Medium adjustments */
+@media (min-width: 768px) and (max-width: 991px) {
+    .tp-about-banner-title {
+        font-size: 22px !important;
+    }
+
+    .tp-history-area {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+
+    .tp-work-area {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+}
+
+/* Small phones: Extra compact */
+@media (max-width: 390px) {
+    .tp-about-banner-title {
+        font-size: 16px !important;
+    }
+
+    .tp-quote-text {
+        font-size: 18px !important;
+    }
+
+    .tp-work-title {
+        font-size: 13px !important;
+    }
+}
