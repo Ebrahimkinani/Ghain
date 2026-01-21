@@ -72,7 +72,8 @@ body {
     /* Fix category area spacing */
     .tp-category-area,
     .category-area {
-        padding-top: 40px !important;
+        padding-top: 20px !important;
+        /* Reduced from 40px */
     }
 
     /* Reduce ALL category card image heights on mobile (makhawir, jalabiyas, etc.) */
@@ -92,6 +93,22 @@ body {
 
     .custom-shop-card .tp-category-thumb {
         height: 220px !important;
+    }
+
+    /* Global fix for inline gaps */
+    img,
+    video,
+    iframe {
+        display: block;
+    }
+
+    .ghain-hero-slider img,
+    .ghain-hero-slider video,
+    .ghain-hero-slider iframe {
+        display: block;
+        margin: 0;
+        padding: 0;
+        line-height: 0;
     }
 }
 
