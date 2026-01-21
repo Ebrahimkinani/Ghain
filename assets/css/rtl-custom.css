@@ -457,7 +457,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 /* Product Card Border & Fixes */
 .tp-product-item-2 {
-    border: 1px solid red !important;
+    border: 1px solid rgba(128, 128, 128, 0.5) !important;
     padding: 0 !important;
     /* remove any default padding */
 }

@@ -9,8 +9,8 @@
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
     overflow: hidden;
-    /* Mobile: increased height */
-    height: clamp(500px, 75vh, 700px);
+    /* Mobile: half height */
+    height: 50vh;
 }
 
 /* Tablet and up: increased height */
