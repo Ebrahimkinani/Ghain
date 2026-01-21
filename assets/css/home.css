@@ -784,3 +784,97 @@ body {
     opacity: 1;
     transform: scale(1);
 }
+
+/* ========================================
+   TESTIMONIAL ARROWS - SEPARATE SIDES
+   ======================================== */
+/* Override default centering to push arrows to edges */
+.tp-testimonial-arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    /* Add some spacing from screen edges */
+    z-index: 10;
+    pointer-events: none;
+    /* Allow clicking through the container */
+}
+
+/* Ensure buttons are clickable */
+.tp-testimonial-arrow button {
+    pointer-events: auto;
+    position: static;
+    /* Reset absolute positioning if any */
+    transform: none !important;
+    /* Reset existing transforms if any */
+    margin: 0 !important;
+}
+
+/* RTL Support for arrows */
+[dir="rtl"] .tp-testimonial-arrow {
+    flex-direction: row-reverse;
+}
+
+/* Hide on mobile if needed (already likely hidden via d-none d-md-block) */
+/* Hide on mobile if needed (already likely hidden via d-none d-md-block) */
+@media (max-width: 767px) {
+    .tp-testimonial-arrow {
+        display: none;
+    }
+}
+
+/* ========================================
+   TESTIMONIAL ARROWS - SEPARATE SIDES (FIX)
+   ======================================== */
+/* Reset container layout */
+.tp-testimonial-arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0;
+    z-index: 10;
+    pointer-events: none;
+    display: block;
+    /* Ensure it's not flex anymore */
+    padding: 0;
+}
+
+/* Ensure buttons are clickable and positioned absolutely */
+.tp-testimonial-arrow button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: auto;
+    margin: 0 !important;
+}
+
+/* Previous Button -> Left Side */
+.tp-testimonial-slider-button-prev {
+    left: 40px;
+    right: auto;
+}
+
+/* Next Button -> Right Side */
+.tp-testimonial-slider-button-next {
+    right: 40px;
+    left: auto;
+}
+
+/* RTL Specific - Force Physical positioning if needed */
+[dir="rtl"] .tp-testimonial-slider-button-prev {
+    left: 40px;
+    right: auto;
+}
+
+[dir="rtl"] .tp-testimonial-slider-button-next {
+    right: 40px;
+    left: auto;
+}
