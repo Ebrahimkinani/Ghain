@@ -140,6 +140,13 @@
     aspect-ratio: 16/9;
 }
 
+/* Phone screens only - no extra margin needed, body padding handles header */
+@media (max-width: 575px) {
+    .ghain-hero-slider {
+        margin-top: 0;
+    }
+}
+
 /* Tablet and up: increased height */
 @media (min-width: 768px) {
     .ghain-hero-slider {
@@ -704,7 +711,7 @@ body {
 
 @media only screen and (max-width: 767px) {
     body {
-        padding-top: 48px;
+        padding-top: 120px;
     }
 
     .tp-header-bottom-2 {
@@ -715,6 +722,22 @@ body {
     .tp-header-sticky.header-sticky {
         padding-top: 3px;
         padding-bottom: 3px;
+    }
+
+    /* Center the hamburger menu icon on phone screens */
+    .tp-header-bottom-right {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .tp-header-action {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .tp-header-hamburger {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
     }
 }
 

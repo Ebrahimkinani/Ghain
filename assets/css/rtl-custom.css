@@ -561,6 +561,16 @@ header .logo img {
     height: auto !important;
 }
 
+/* Center logo on all pages */
+.logo,
+.tp-header-bottom-2 .logo,
+header .logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
 /* Mobile Responsive Adjustments */
 @media (max-width: 767px) {
 
@@ -612,4 +622,210 @@ header .logo img {
     .ghain-hero-content p {
         font-size: 16px !important;
     }
+}
+
+/* Header Adjustments for Phone Screens (strictly max-width: 575px) */
+@media (max-width: 575px) {
+
+    /* Stack logo column and action column vertically */
+    .tp-header-bottom-2 .container>.tp-mega-menu-wrapper>.row {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding-top: 10px !important;
+        padding-bottom: 15px !important;
+    }
+
+    /* Make columns full width and center content */
+    .tp-header-bottom-2 .col-6 {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* Override any specific padding/centering for the logo container */
+    .tp-header-bottom-2 .logo {
+        text-align: center !important;
+        margin-bottom: 5px !important;
+    }
+
+    /* Increase logo size for phone screens */
+    .logo img,
+    .tp-header-bottom-2 .logo img,
+    header .logo img {
+        max-width: 180px !important;
+        width: 180px !important;
+        height: auto !important;
+    }
+
+    /* Adjust the action area (contains hamburger) to be centered below logo */
+    .tp-header-bottom-right {
+        justify-content: center !important;
+        padding-left: 0 !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+    }
+
+    .tp-header-action {
+        margin-left: 0 !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    /* Ensure hamburger icon is centered and properly spaced */
+    .tp-header-hamburger {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* Footer Restructuring for Phone Screens Only */
+    /* Make the footer row use flexbox for ordering */
+    .tp-footer-area .tp-footer-top .row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* Override ALL column classes for footer restructuring */
+    /* Logo Section - Centered at Top */
+    .tp-footer-area .tp-footer-top .row>.col-xl-4.col-lg-3.col-md-4.col-sm-6.col-6,
+    .tp-footer-area .tp-footer-top .row>div.col-xl-4.col-lg-3.col-md-4.col-sm-6.col-6 {
+        order: 1 !important;
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin-bottom: 30px !important;
+    }
+
+    .tp-footer-area .footer-col-1 .tp-footer-logo {
+        text-align: center !important;
+        margin-bottom: 15px !important;
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    .tp-footer-area .footer-col-1 .tp-footer-desc {
+        text-align: center !important;
+        margin-bottom: 15px !important;
+    }
+
+    .tp-footer-area .footer-col-1 .tp-footer-social {
+        justify-content: center !important;
+        display: flex !important;
+        gap: 10px !important;
+    }
+
+    /* حسابي Column (خدمات) - Right Side (50% width) */
+    .tp-footer-area .tp-footer-top .row>.col-xl-2.col-lg-3.col-md-4.col-sm-6.col-6,
+    .tp-footer-area .tp-footer-top .row>div.col-xl-2.col-lg-3.col-md-4.col-sm-6.col-6 {
+        order: 2 !important;
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        margin-bottom: 30px !important;
+    }
+
+    /* معلومات Column - Left Side (50% width) */
+    .tp-footer-area .tp-footer-top .row>.col-xl-3.col-lg-3.col-md-4.col-sm-6.col-6:nth-child(3),
+    .tp-footer-area .tp-footer-top .row>div.col-xl-3.col-lg-3.col-md-4.col-sm-6.col-6:nth-child(3) {
+        order: 3 !important;
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        margin-bottom: 30px !important;
+    }
+
+    /* Contact Section - Full Width at Bottom */
+    .tp-footer-area .tp-footer-top .row>.col-xl-3.col-lg-3.col-md-4.col-sm-6.col-6:nth-child(4),
+    .tp-footer-area .tp-footer-top .row>div.col-xl-3.col-lg-3.col-md-4.col-sm-6.col-6:nth-child(4) {
+        order: 4 !important;
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+
+    .tp-footer-area .footer-col-4 .tp-footer-widget-title {
+        text-align: center !important;
+    }
+
+    .tp-footer-area .footer-col-4 .tp-footer-talk {
+        text-align: center !important;
+    }
+
+    .tp-footer-area .footer-col-4 .tp-footer-contact {
+        text-align: center !important;
+    }
+
+    .tp-footer-area .footer-col-4 .tp-footer-contact-item {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+}
+
+/* Contact Section Right Alignment */
+.tp-footer-widget.footer-col-4 {
+    text-align: right !important;
+}
+
+.tp-footer-widget.footer-col-4 .tp-footer-widget-title {
+    text-align: right !important;
+}
+
+.tp-footer-widget.footer-col-4 .tp-footer-talk {
+    text-align: right !important;
+}
+
+.tp-footer-widget.footer-col-4 .tp-footer-talk span,
+.tp-footer-widget.footer-col-4 .tp-footer-talk h4,
+.tp-footer-widget.footer-col-4 .tp-footer-talk a {
+    text-align: right !important;
+    display: block !important;
+}
+
+/* Email and Address Section Right Alignment */
+.tp-footer-widget.footer-col-5 {
+    text-align: right !important;
+}
+
+.tp-footer-widget.footer-col-5 .tp-footer-contact {
+    text-align: right !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    /* In RTL column, flex-start is Right */
+}
+
+.tp-footer-widget.footer-col-5 .tp-footer-contact-item {
+    justify-content: flex-start !important;
+    text-align: right !important;
+    direction: rtl !important;
+    width: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+}
+
+.tp-footer-widget.footer-col-5 .tp-footer-contact-icon {
+    margin: 0 !important;
+    order: 1 !important;
+    /* Icon First (Right) */
+}
+
+.tp-footer-widget.footer-col-5 .tp-footer-contact-content {
+    text-align: right !important;
+    flex: 0 !important;
+    order: 2 !important;
+    /* Content Second (Left) */
+}
+
+.tp-footer-widget.footer-col-5 .tp-footer-contact-content p,
+.tp-footer-widget.footer-col-5 .tp-footer-contact-content a {
+    text-align: right !important;
+    direction: rtl !important;
 }

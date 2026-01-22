@@ -18048,3 +18048,42 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 /*----------------------------------------*/
 }
+/* ========================================
+   FEATURE AREA (MOVED FROM HOME.CSS)
+   ======================================== */
+.tp-feature-area {
+    padding-bottom: 64px !important;
+}
+
+@media (max-width: 991px) {
+    .tp-feature-area {
+        padding-bottom: 40px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .tp-feature-area {
+        padding-bottom: 28px !important;
+    }
+}
+
+[dir="rtl"] .tp-feature-icon-2.mr-10 {
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+}
+
+/* ========================================
+   FIX FOOTER LOGO ON MOBILE
+   ======================================== */
+@media (max-width: 575px) {
+    .tp-footer-logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .tp-footer-desc {
+        text-align: center;
+    }
+    .tp-footer-social {
+        justify-content: center;
+    }
+}
