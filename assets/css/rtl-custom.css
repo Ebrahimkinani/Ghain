@@ -829,3 +829,18 @@ header .logo {
     text-align: right !important;
     direction: rtl !important;
 }
+
+/* Override Product Title Size to match 'Quiet Elegance' section (15px) globally */
+.tp-product-title-2 {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.33 !important;
+    margin-bottom: 7px !important;
+}
+
+/* Ensure tag sizes are consistent if they differ */
+.tp-product-tag-2,
+.tp-product-tag-2 a {
+    font-size: 16px !important;
+    /* Default was 16px in some contexts, ensuring consistency */
+}
